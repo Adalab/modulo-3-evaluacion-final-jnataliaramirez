@@ -1,7 +1,5 @@
 function Filter (props) {
 
-
-  // Funciones manejadoras
   const handleSearch = (ev) => {
     props.handleChange(ev.target.value);
   };

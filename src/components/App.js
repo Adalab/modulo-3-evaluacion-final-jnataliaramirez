@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 // imports componentes
 import Filter from './Filter';
+import CharacterList from './CharacterList';
 // imports servicios
 import callToApi from '../services/api.js';
 // imports estilos
@@ -24,22 +25,7 @@ function App() {
     setSearchCharacter(value);
   };
   // Funciones auxiliares para el Html
-
-  // Render
-  const renderSearch = () => {
-    return dataCharacters.map((dataCharacter) => {
-      return (
-        <li key={dataCharacter.id}>
-          <img
-            src={`${dataCharacter.image}`}
-            alt={`Imagen del Personaje: ${dataCharacter.name}`}
-          />
-          <h3>{dataCharacter.name}</h3>
-          <p>{dataCharacter.species}</p>
-        </li>
-      );
-    });
-  };
+  
 
   return (
     <>
@@ -59,9 +45,13 @@ function App() {
       </header>
       <main>
         <ul>
-          {/* Render  */}
-          {renderSearch()}
-          {/* Render  */}
+          <CharacterList
+            dataCharacters={dataCharacters}
+            id={dataCharacters.id}
+            image={dataCharacters.image}
+            name={dataCharacters.name}
+            species={dataCharacters.species}
+          />
         </ul>
       </main>
     </>
