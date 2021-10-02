@@ -1,12 +1,14 @@
+import '../styles/components/CharacterCard.scss'
+
 function CharacterCard(props) {
   return (
     <>
       <img
-        src={`${props.data.image}`}
-        alt={`Imagen del Personaje: ${props.data.name}`}
+        src={`${props.dataCharacter.image}`}
+        alt={`Imagen del Personaje: ${props.dataCharacter.name}`}
       />
-      <h3>{props.data.name}</h3>
-      <p>{props.data.species}</p>
+      <h3>{props.dataCharacter.name}</h3>
+      <p>{props.dataCharacter.species}</p>
     </>
   );
 }

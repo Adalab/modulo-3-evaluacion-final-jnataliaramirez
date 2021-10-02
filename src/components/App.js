@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 // imports componentes
 import Filter from './Filter';
 import CharacterList from './CharacterList';
+import CharacterDetail from './CharacterDetail';
 // imports servicios
 import callToApi from '../services/api.js';
 // imports estilos
@@ -45,8 +46,14 @@ function App() {
       </header>
       <main>
         <section>
+          <CharacterDetail 
+            dataCharacters={dataCharacters}
+          
+          />
+        </section>
+        <section>
           <CharacterList
-            data={dataCharacters}
+            dataCharacters={dataCharacters}
           />
         </section>
       </main>
