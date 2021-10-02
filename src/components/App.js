@@ -52,6 +52,7 @@ function App() {
             id='search'
             placeholder='Busca aquí tu personaje'
             onChange={handleSearch}
+            value={searchCharacter}
           />
         </form>
       </header>
