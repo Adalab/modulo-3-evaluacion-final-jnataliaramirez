@@ -10,24 +10,36 @@ import '../styles/App.scss';
 function App() {
   // Variables de estado
   const [searchCharacter, setSearchCharacter] = useState('');
-  const [dataCharacter, setDataCharacter] = useState([ ]);
+  const [dataCharacters, setDataCharacters] = useState([]);
 
   // useEffect()
   useEffect(() => {
-    callToApi(searchCharacter).then(response => {
-      setDataCharacter(response);
+    callToApi(searchCharacter).then((response) => {
+      setDataCharacters(response);
     });
-  }, [searchCharacter] )
+  }, [searchCharacter]);
 
   // Funciones manejadoras
   const handleSearch = (ev) => {
-    setSearchCharacter(ev.target.value)
-    console.log(ev.target.value)
-
-  }
+    setSearchCharacter(ev.target.value);
+  };
   // Funciones auxiliares para el Html
 
   // Render
+  const renderSearch = () => {
+    return dataCharacters.map((dataCharacter) => {
+      return (
+        <li key={dataCharacter.id}>
+          <img
+            src={`${dataCharacter.image}`}
+            alt={`Imagen del Personaje: ${dataCharacter.name}`}
+          />
+          <h3>{dataCharacter.name}</h3>
+          <p>{dataCharacter.species}</p>
+        </li>
+      );
+    });
+  };
 
   return (
     <>
@@ -46,27 +58,8 @@ function App() {
       <main>
         <ul>
           {/* Render  */}
-          <li>
-            <img src='' alt='Imagen del Personaje:' />
-            <h3>Nombre del personaje</h3>
-            <p>Especie</p>
-          </li>
+          {renderSearch()}
           {/* Render  */}
-          <li>
-            <img src='' alt='Imagen del Personaje:' />
-            <h3>Nombre del personaje</h3>
-            <p>Especie</p>
-          </li>
-          <li>
-            <img src='' alt='Imagen del Personaje:' />
-            <h3>Nombre del personaje</h3>
-            <p>Especie</p>
-          </li>
-          <li>
-            <img src='' alt='Imagen del Personaje:' />
-            <h3>Nombre del personaje</h3>
-            <p>Especie</p>
-          </li>
         </ul>
       </main>
     </>

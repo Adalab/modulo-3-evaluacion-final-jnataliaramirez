@@ -6,9 +6,10 @@ const callToApi = (searchCharacter) => {
     .then((response) => {
       const result = response.results.map((character) => {
         return {
+          id: character.id,
           name: character.name,
           image: character.image,
-          species: character.species
+          species: character.species,
         };
       });
       return result;
@@ -16,3 +17,4 @@ const callToApi = (searchCharacter) => {
 };
 
 export default callToApi;
+    
