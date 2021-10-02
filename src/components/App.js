@@ -1,9 +1,9 @@
 // imports react
 import { useEffect, useState } from 'react';
 // imports componentes
+import Filter from './Filter';
 // imports servicios
 import callToApi from '../services/api.js';
-import '../services/localStorage';
 // imports estilos
 import '../styles/App.scss';
 
@@ -20,8 +20,8 @@ function App() {
   }, [searchCharacter]);
 
   // Funciones manejadoras
-  const handleSearch = (ev) => {
-    setSearchCharacter(ev.target.value);
+  const handleSearch = value => {
+    setSearchCharacter(value);
   };
   // Funciones auxiliares para el Html
 
@@ -46,13 +46,14 @@ function App() {
       <header>
         <h1>Rick and Morty</h1>
         <form>
-          <input
+          <Filter
             type='text'
             name='search'
             id='search'
             placeholder='Busca aquí tu personaje'
-            onChange={handleSearch}
+            handleChange={handleSearch}
             value={searchCharacter}
+          
           />
         </form>
       </header>

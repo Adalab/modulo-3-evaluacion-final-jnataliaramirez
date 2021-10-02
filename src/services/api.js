@@ -1,5 +1,6 @@
 const callToApi = (searchCharacter) => {
-  return fetch(
+  
+    return fetch(
     `https://rickandmortyapi.com/api/character/?name=${searchCharacter}`
   )
     .then((response) => response.json())
@@ -14,7 +15,7 @@ const callToApi = (searchCharacter) => {
       });
       return result;
     });
+    
 };
 
 export default callToApi;
-    
