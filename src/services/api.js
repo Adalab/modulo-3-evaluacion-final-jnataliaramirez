@@ -11,6 +11,9 @@ const callToApi = (searchCharacter) => {
           name: character.name,
           image: character.image,
           species: character.species,
+          origin: character.origin.name,
+          episodes: character.episode.length,
+          status: character.status
         };
       });
       return result;

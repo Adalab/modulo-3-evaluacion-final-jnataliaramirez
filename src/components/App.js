@@ -26,7 +26,7 @@ function App() {
     setSearchCharacter(value);
   };
   // Funciones auxiliares para el Html
-
+  console.log(dataCharacters);
 
   return (
     <>
