@@ -25,7 +25,7 @@ function App() {
     setSearchCharacter(value);
   };
   // Funciones auxiliares para el Html
-  
+
 
   return (
     <>
@@ -44,15 +44,11 @@ function App() {
         </form>
       </header>
       <main>
-        <ul>
+        <section>
           <CharacterList
-            dataCharacters={dataCharacters}
-            id={dataCharacters.id}
-            image={dataCharacters.image}
-            name={dataCharacters.name}
-            species={dataCharacters.species}
+            data={dataCharacters}
           />
-        </ul>
+        </section>
       </main>
     </>
   );
