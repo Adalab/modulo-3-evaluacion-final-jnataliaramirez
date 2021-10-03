@@ -1,6 +1,6 @@
 function Filter (props) {
 
-  const handleSearch = (ev) => {
+  const handleSearch = ev => {
     props.handleChange(ev.target.value);
   };
 

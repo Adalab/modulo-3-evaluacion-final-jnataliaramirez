@@ -3,13 +3,15 @@ import '../styles/components/CharacterDetail.scss'
 function CharacterDetail (props) {
 
   return (
-    <div>
-      <h2>Nombre </h2>
-      <p><span>Status:</span> </p>
-      <p><span>Species:</span> </p>
-      <p><span>Origin:</span> </p>
-      <p><span>Episodes:</span> </p>
-    </div>
+    // <article>
+    //   <img src={props.dataCharacter.image} alt={`Imagen de ${props.dataCharacter.name}`} />
+    //   <h2>{props.dataCharacter.name} </h2>
+    //   <p><span>Status:</span> {props.dataCharacter.status} </p>
+    //   <p><span>Species:</span> {props.dataCharacter.species} </p>
+    //   <p><span>Origin:</span> {props.dataCharacter.origin} </p>
+    //   <p><span>Episodes:</span> {props.dataCharacter.episodes}</p>
+    // </article>
+    <div>hola</div>
   )
 }
 

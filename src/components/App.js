@@ -13,6 +13,7 @@ function App() {
   // Variables de estado
   const [searchCharacter, setSearchCharacter] = useState('');
   const [dataCharacters, setDataCharacters] = useState([]);
+  const [clickCharacter, setClickCharacter] = useState('');
 
   // useEffect()
   useEffect(() => {
@@ -22,11 +23,22 @@ function App() {
   }, [searchCharacter]);
 
   // Funciones manejadoras
-  const handleSearch = value => {
+  const handleSearch = (value) => {
     setSearchCharacter(value);
   };
-  // Funciones auxiliares para el Html
-  console.log(dataCharacters);
+
+  const handleCharacter = (value) => {
+    setClickCharacter(value);
+  };
+
+  // Funciones auxiliares
+  const clickCharacterFunction = (click) => {
+    const findClickCharacter = dataCharacters.find((dataCharacter) => {
+      return parseInt(click) === parseInt(dataCharacter.id);
+    });
+    return findClickCharacter
+  }
+
 
   return (
     <>
@@ -40,20 +52,20 @@ function App() {
             placeholder='Busca aquí tu personaje'
             handleChange={handleSearch}
             value={searchCharacter}
-          
           />
         </form>
       </header>
       <main>
         <section>
           <CharacterDetail 
-            dataCharacters={dataCharacters}
+          // dataCharacter={clickCharacterFunction(clickCharacter)}
           
           />
         </section>
         <section>
           <CharacterList
             dataCharacters={dataCharacters}
+            handleClick={handleCharacter}
           />
         </section>
       </main>
