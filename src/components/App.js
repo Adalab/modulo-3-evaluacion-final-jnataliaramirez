@@ -1,5 +1,6 @@
-// imports react
+// imports librerias
 import { useEffect, useState } from 'react';
+import { Route, Switch, useRouteMatch } from 'react-router-dom';
 // imports componentes
 import Filter from './Filter';
 import CharacterList from './CharacterList';
@@ -13,7 +14,6 @@ function App() {
   // Variables de estado
   const [searchCharacter, setSearchCharacter] = useState('');
   const [dataCharacters, setDataCharacters] = useState([]);
-  const [clickCharacter, setClickCharacter] = useState('');
 
   // useEffect()
   useEffect(() => {
@@ -27,19 +27,15 @@ function App() {
     setSearchCharacter(value);
   };
 
-  const handleCharacter = (value) => {
-    setClickCharacter(value);
-  };
-
+  // Router
+  const routeCharacter = useRouteMatch('/character/:id');
+  const characterId = routeCharacter !== null ? routeCharacter.params.id : '';
+  
+  const selectedCharacter = dataCharacters.find((data) => parseInt(data.id) === parseInt(characterId))
+    
   // Funciones auxiliares
-  const clickCharacterFunction = (click) => {
-    const findClickCharacter = dataCharacters.find((dataCharacter) => {
-      return parseInt(click) === parseInt(dataCharacter.id);
-    });
-    return findClickCharacter
-  }
-
-
+  
+  
   return (
     <>
       <header>
@@ -56,18 +52,28 @@ function App() {
         </form>
       </header>
       <main>
-        <section>
-          <CharacterDetail 
-          // dataCharacter={clickCharacterFunction(clickCharacter)}
-          
-          />
-        </section>
-        <section>
-          <CharacterList
-            dataCharacters={dataCharacters}
-            handleClick={handleCharacter}
-          />
-        </section>
+        <Switch>
+          <Route exact path='/'>
+            <section>
+              <CharacterList
+                dataCharacters={dataCharacters}
+              />
+            </section>
+          </Route>
+
+          <Route path='/character/:id'>
+            <section>
+              <CharacterDetail dataCharacter={selectedCharacter} />
+            </section>
+          </Route>
+
+          <Route>
+          <section>
+            Oh! Página equivocada
+          </section>
+          </Route>
+
+        </Switch>
       </main>
     </>
   );
