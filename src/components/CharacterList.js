@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import CharacterCard from './CharacterCard';
 import '../styles/components/CharacterList.scss';
 
