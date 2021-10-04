@@ -12,6 +12,7 @@ function FilterCharacter (props) {
     placeholder={props.placeholder}
     onChange={handleSearch}
     value={props.value}
+    className={props.class}
   />
   );
 };

@@ -1,0 +1,7 @@
+@import './core/variables.scss';
+@import './core/reset.scss';
+
+body {
+  background-color: $color-secondary;
+  font-family: $font-text;
+}

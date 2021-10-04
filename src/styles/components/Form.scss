@@ -1,0 +1,98 @@
+@import '../core/mixins.scss';
+@import '../core/variables.scss';
+
+// Quitar estilos al select
+.content-input input,
+.content-select select {
+  appearance        : none;
+  -webkit-appearance: none;
+  -moz-appearance   : none;
+}
+
+.content-select select {
+  appearance        : none;
+  -webkit-appearance: none;
+  -moz-appearance   : none;
+}
+
+.content-select select::-ms-expand {
+  display: none;
+}
+
+
+.form {
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  flex-direction : column;
+  margin         : 20px 0 30px;
+
+  &__character {
+    font-family  : $font-title;
+    width        : 100%;
+    border       : 0;
+    border-bottom: 2px solid $color-principal;
+    outline      : 0;
+    font-size    : 18px;
+    color        : $color-principal;
+    padding      : 5px 2px;
+    background   : transparent;
+    transition   : border-color 0.2s;
+    margin       : 18px;
+    letter-spacing: 2px ;
+
+  }
+
+  &__specie {
+    width          : 150px;
+    position       : relative;
+    display        : flex;
+    justify-content: center;
+
+
+    select {
+      display      : inline-block;
+      width        : 65%;
+      cursor       : pointer;
+      padding      : 7px 10px;
+      height       : 35px;
+      outline      : 0;
+      border       : 0;
+      border-radius: 0;
+      background   : $color-secondary;
+      color        : $color-principal;
+      font-size    : 18px;
+      font-family  : $font-title;
+      border       : 1px solid $color-principal;
+      border-radius: 10px;
+      position     : relative;
+      transition   : all 0.25s ease;
+      letter-spacing: 2px ;
+    }
+
+    select:hover {
+      background: $color-principal-alt;
+    }
+
+    i {
+      position     : absolute;
+      right        : 40px;
+      top          : calc(50% - 7px);
+      width        : 8px;
+      height       : 8px;
+      display      : block;
+      border-left  : 2px solid $color-principal;
+      border-bottom: 2px solid $color-principal;
+      transform    : rotate(-45deg);
+      transition   : all 0.25s ease;
+
+
+    }
+
+    :hover i {
+      margin-top: 3px;
+    }
+
+  }
+
+}

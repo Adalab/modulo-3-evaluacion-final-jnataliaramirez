@@ -4,11 +4,19 @@ function FilterSpecie(props) {
   };
 
   return (
-    <select name='specie' id='specie' onChange={handleSpecie}>
-      <option value='all'>Todos</option>
-      <option value='Human'>Human</option>
-      <option value='Alien'>Alien </option>
-    </select>
+    <div className='form__specie content-select'>
+      <select
+        name='specie'
+        id='specie'
+        className='form__specie--select'
+        onChange={handleSpecie}
+      >
+        <option value='all'>All</option>
+        <option value='Human'>Human</option>
+        <option value='Alien'>Alien</option>
+      </select>
+      <i></i>
+    </div>
   );
 }
 

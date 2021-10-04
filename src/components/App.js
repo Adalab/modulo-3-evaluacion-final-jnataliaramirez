@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 // imports componentes
+import Header from './Header'
 import FilterCharacter from './FilterCharacter';
 import FilterSpecie from './FilterSpecie';
 import CharacterList from './CharacterList';
@@ -10,6 +11,8 @@ import CharacterDetail from './CharacterDetail';
 import callToApi from '../services/api.js';
 // imports estilos
 import '../styles/App.scss';
+import '../styles/components/Form.scss';
+
 
 function App() {
   // Variables de estado
@@ -24,56 +27,49 @@ function App() {
     });
   }, [searchCharacter]);
 
-
   // Funciones manejadoras
-  const handleSubmit = ev => {
+  const handleSubmit = (ev) => {
     ev.preventDefault();
-  }
+  };
 
-  const handleSearch = value => {
+  const handleSearch = (value) => {
     setSearchCharacter(value);
   };
 
-  const handleSpecie = value => {
-    setFilterSpecie(value)
-  }
-
+  const handleSpecie = (value) => {
+    setFilterSpecie(value);
+  };
 
   // Router
   const routeCharacter = useRouteMatch('/character/:id');
   const characterId = routeCharacter !== null ? routeCharacter.params.id : '';
-  
-  const selectedCharacter = dataCharacters.find((data) => parseInt(data.id) === parseInt(characterId))
-    
+
+  const selectedCharacter = dataCharacters.find(
+    (data) => parseInt(data.id) === parseInt(characterId)
+  );
+
   // Funciones auxiliares
-  
-  
+
   return (
     <>
-      <header>
-        <h1>Rick and Morty</h1>
-        <form onSubmit={handleSubmit}>
+      <Header />
+      <main>
+        <form className='form' onSubmit={handleSubmit}>
           <div>
-          <FilterCharacter
-            type='text'
-            name='search'
-            id='search'
-            placeholder='Busca aquí tu personaje'
-            handleChange={handleSearch}
-            value={searchCharacter}
-          />
+            <FilterCharacter
+              type='text'
+              name='search'
+              id='search'
+              placeholder='Busca aquí tu personaje'
+              handleChange={handleSearch}
+              value={searchCharacter}
+              class='form__character'
+            />
           </div>
 
-          <div>
-          <FilterSpecie
-           handleChange={handleSpecie}
-          />
-          </div>
-
+            <FilterSpecie handleChange={handleSpecie} />
 
         </form>
-      </header>
-      <main>
         <Switch>
           <Route exact path='/'>
             <section>
@@ -92,11 +88,8 @@ function App() {
           </Route>
 
           <Route>
-          <section>
-            Oh! Página equivocada
-          </section>
+            <section>Oh! Página equivocada</section>
           </Route>
-
         </Switch>
       </main>
     </>
