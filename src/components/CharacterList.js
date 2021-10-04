@@ -9,6 +9,13 @@ function CharacterList(props) {
 
   const dataList = 
   props.dataCharacters
+  .filter((dataCharacter) => {
+    if (props.species === 'Human') {
+      return dataCharacter.species === 'Human'
+    } else if (props.species === 'Alien') {
+      return dataCharacter.species === 'Alien'
+    } return true
+  }) 
   .map((dataCharacter) => {
     return (
         <li key={dataCharacter.id} id={dataCharacter.id} >

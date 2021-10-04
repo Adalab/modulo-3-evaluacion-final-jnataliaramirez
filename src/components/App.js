@@ -2,8 +2,8 @@
 import { useEffect, useState } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 // imports componentes
-import FilterText from './FilterText';
-import FilterCheckbox from './FilterCheckbox';
+import FilterCharacter from './FilterCharacter';
+import FilterSpecie from './FilterSpecie';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
 // imports servicios
@@ -15,8 +15,7 @@ function App() {
   // Variables de estado
   const [searchCharacter, setSearchCharacter] = useState('');
   const [dataCharacters, setDataCharacters] = useState([]);
-  const [checkHuman, setCheckHuman] = useState(false);
-  const [checkAlien, setCheckAlien] = useState(false);
+  const [filterSpecie, setFilterSpecie] = useState('');
 
   // useEffect()
   useEffect(() => {
@@ -25,18 +24,20 @@ function App() {
     });
   }, [searchCharacter]);
 
+
   // Funciones manejadoras
+  const handleSubmit = ev => {
+    ev.preventDefault();
+  }
+
   const handleSearch = value => {
     setSearchCharacter(value);
   };
 
-  const handleCheckHuman = value => {
-    setCheckHuman(value);
+  const handleSpecie = value => {
+    setFilterSpecie(value)
   }
 
-  const handleCheckAlien = value => {
-    setCheckAlien(value);
-  }
 
   // Router
   const routeCharacter = useRouteMatch('/character/:id');
@@ -51,9 +52,9 @@ function App() {
     <>
       <header>
         <h1>Rick and Morty</h1>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div>
-          <FilterText
+          <FilterCharacter
             type='text'
             name='search'
             id='search'
@@ -64,14 +65,12 @@ function App() {
           </div>
 
           <div>
-          <FilterCheckbox 
-          valueHuman={checkHuman}
-          handleCheckHuman={handleCheckHuman}
-          valueAlien={checkAlien}
-          handleCheckAlien={handleCheckAlien}
+          <FilterSpecie
+           handleChange={handleSpecie}
           />
           </div>
-          
+
+
         </form>
       </header>
       <main>
@@ -81,6 +80,7 @@ function App() {
               <CharacterList
                 dataCharacters={dataCharacters}
                 wordSearch={searchCharacter}
+                species={filterSpecie}
               />
             </section>
           </Route>
