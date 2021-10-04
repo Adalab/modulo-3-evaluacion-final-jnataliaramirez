@@ -26,19 +26,24 @@
   align-items    : center;
   flex-direction : column;
   margin         : 20px 0 30px;
+  text-align: center;
+
+  div {
+    display: flex;
+  }
 
   &__character {
     font-family  : $font-title;
-    width        : 100%;
+    width        : 230px;
     border       : 0;
     border-bottom: 2px solid $color-principal;
     outline      : 0;
     font-size    : 18px;
     color        : $color-principal;
-    padding      : 5px 2px;
+    padding      : 1px 2px;
     background   : transparent;
     transition   : border-color 0.2s;
-    margin       : 18px;
+    margin       : 5px 0 20px;
     letter-spacing: 2px ;
 
   }

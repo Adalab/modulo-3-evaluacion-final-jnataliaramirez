@@ -14,6 +14,8 @@ function FilterSpecie(props) {
         <option value='all'>All</option>
         <option value='Human'>Human</option>
         <option value='Alien'>Alien</option>
+        <option value='Robot'>Robot</option>
+        <option value='Animal'>Animal</option>
       </select>
       <i></i>
     </div>

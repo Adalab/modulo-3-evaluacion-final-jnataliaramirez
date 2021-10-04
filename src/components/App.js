@@ -2,17 +2,17 @@
 import { useEffect, useState } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 // imports componentes
-import Header from './Header'
+import Header from './Header';
 import FilterCharacter from './FilterCharacter';
 import FilterSpecie from './FilterSpecie';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
+import Footer from './Footer';
 // imports servicios
 import callToApi from '../services/api.js';
 // imports estilos
 import '../styles/App.scss';
 import '../styles/components/Form.scss';
-
 
 function App() {
   // Variables de estado
@@ -60,16 +60,15 @@ function App() {
               type='text'
               name='search'
               id='search'
-              placeholder='Busca aquí tu personaje'
+              placeholder= 'Character search'
               handleChange={handleSearch}
               value={searchCharacter}
               class='form__character'
             />
           </div>
-
-            <FilterSpecie handleChange={handleSpecie} />
-
+          <FilterSpecie handleChange={handleSpecie} />
         </form>
+
         <Switch>
           <Route exact path='/'>
             <section>
@@ -92,6 +91,7 @@ function App() {
           </Route>
         </Switch>
       </main>
+      {/* <Footer /> */}
     </>
   );
 }

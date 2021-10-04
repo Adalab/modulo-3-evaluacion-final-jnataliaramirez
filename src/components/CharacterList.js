@@ -14,7 +14,11 @@ function CharacterList(props) {
       return dataCharacter.species === 'Human'
     } else if (props.species === 'Alien') {
       return dataCharacter.species === 'Alien'
-    } return true
+    } else if (props.species === 'Robot') {
+      return dataCharacter.species === 'Robot'
+    } else if (props.species === 'Animal') {
+      return dataCharacter.species === 'Animal'
+    }return true
   }) 
   .map((dataCharacter) => {
     return (

@@ -1,0 +1,48 @@
+@import '../core/variables.scss';
+@import '../core/mixins.scss';
+
+.detail {
+  background-color: $color-principal-alt;
+  margin          : 30px 0 50px;
+  border-radius   : 10px;
+  width           : 250px;
+  height          : 390px;
+  margin          : 0 auto;
+  text-align      : center;
+
+
+  img {
+    width        : 200px;
+    border-radius: 10px;
+    margin-top   : 20px;
+  }
+
+  h2 {
+    font-size  : 24px;
+    font-family: $font-title;
+    font-weight: bold;
+    margin     : 10px 0;
+
+  }
+
+  p {
+    margin-bottom: 3px;
+    font-family  : $font-title;
+    font-size    : 18px;
+    font-weight  : normal;
+
+    span {
+      font-weight: bold;
+      color      : $color-principal;
+    }
+
+    .icon {
+      color: #6F69AC;
+    }
+  }
+
+  div {
+    margin-bottom: 20px;
+  }
+
+}
