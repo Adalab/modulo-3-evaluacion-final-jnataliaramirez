@@ -1,4 +1,4 @@
-function Filter (props) {
+function FilterText (props) {
 
   const handleSearch = ev => {
     props.handleChange(ev.target.value);
@@ -16,4 +16,4 @@ function Filter (props) {
   );
 };
 
-export default Filter;
+export default FilterText;

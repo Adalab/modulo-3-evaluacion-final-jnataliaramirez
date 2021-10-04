@@ -2,7 +2,8 @@
 import { useEffect, useState } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 // imports componentes
-import Filter from './Filter';
+import FilterText from './FilterText';
+import FilterCheckbox from './FilterCheckbox';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
 // imports servicios
@@ -14,6 +15,8 @@ function App() {
   // Variables de estado
   const [searchCharacter, setSearchCharacter] = useState('');
   const [dataCharacters, setDataCharacters] = useState([]);
+  const [checkHuman, setCheckHuman] = useState(false);
+  const [checkAlien, setCheckAlien] = useState(false);
 
   // useEffect()
   useEffect(() => {
@@ -23,9 +26,17 @@ function App() {
   }, [searchCharacter]);
 
   // Funciones manejadoras
-  const handleSearch = (value) => {
+  const handleSearch = value => {
     setSearchCharacter(value);
   };
+
+  const handleCheckHuman = value => {
+    setCheckHuman(value);
+  }
+
+  const handleCheckAlien = value => {
+    setCheckAlien(value);
+  }
 
   // Router
   const routeCharacter = useRouteMatch('/character/:id');
@@ -41,7 +52,8 @@ function App() {
       <header>
         <h1>Rick and Morty</h1>
         <form>
-          <Filter
+          <div>
+          <FilterText
             type='text'
             name='search'
             id='search'
@@ -49,6 +61,17 @@ function App() {
             handleChange={handleSearch}
             value={searchCharacter}
           />
+          </div>
+
+          <div>
+          <FilterCheckbox 
+          valueHuman={checkHuman}
+          handleCheckHuman={handleCheckHuman}
+          valueAlien={checkAlien}
+          handleCheckAlien={handleCheckAlien}
+          />
+          </div>
+          
         </form>
       </header>
       <main>
