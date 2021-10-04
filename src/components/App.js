@@ -57,6 +57,7 @@ function App() {
             <section>
               <CharacterList
                 dataCharacters={dataCharacters}
+                wordSearch={searchCharacter}
               />
             </section>
           </Route>

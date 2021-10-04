@@ -5,7 +5,11 @@ const callToApi = (searchCharacter) => {
   )
     .then((response) => response.json())
     .then((response) => {
-      const result = response.results.map((character) => {
+      let result;
+      if (response.results === undefined ) {
+        result = []
+      } else { 
+      result = response.results.map((character) => {
         return {
           id: character.id,
           name: character.name,
@@ -15,10 +19,11 @@ const callToApi = (searchCharacter) => {
           episodes: character.episode.length,
           status: character.status
         };
-      });
+      }); 
+    }
       return result;
     });
-    
+  
 };
 
 export default callToApi;
