@@ -4,11 +4,13 @@
   display: flex;
   justify-content: center;
 
+
   &__logo {
     width: 310px;
 
     @include tablet {
       width: 500px;
+
     }
   }
  }

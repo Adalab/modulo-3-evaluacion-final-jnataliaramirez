@@ -18,13 +18,13 @@ function CharacterList(props) {
   }) 
   .map((dataCharacter) => {
     return (
-        <li key={dataCharacter.id} id={dataCharacter.id} >
+        <li className='cards__item' key={dataCharacter.id} id={dataCharacter.id} >
           <CharacterCard dataCharacter={dataCharacter} />
         </li>
     );
   });
 
-  return <ul>{dataList}</ul>;
+  return <ul className='cards' >{dataList}</ul>;
 }
 
 export default CharacterList;

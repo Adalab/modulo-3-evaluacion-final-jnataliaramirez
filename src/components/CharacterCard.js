@@ -3,13 +3,14 @@ import '../styles/components/CharacterCard.scss'
 
 function CharacterCard(props) {
   return (
-    <Link to={`./character/${props.dataCharacter.id}`}>
+    <Link className='cards__link' to={`./character/${props.dataCharacter.id}`}>
       <img
         src={`${props.dataCharacter.image}`}
         alt={`Imagen del Personaje: ${props.dataCharacter.name}`}
+        className='cards__item--img'
       />
-      <h3>{props.dataCharacter.name}</h3>
-      <p>{props.dataCharacter.species}</p>
+      <h3 className='cards__item--title'>{props.dataCharacter.name}</h3>
+      <p className='cards__item--text' >{props.dataCharacter.species}</p>
     </Link>
   );
 }

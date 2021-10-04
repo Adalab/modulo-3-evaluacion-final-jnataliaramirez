@@ -1,7 +1,14 @@
 @import './core/variables.scss';
 @import './core/reset.scss';
+@import './core/mixins.scss';
 
 body {
   background-color: $color-secondary;
-  font-family: $font-text;
+  font-family     : $font-text;
+  margin          : 0 5px;
+
+  @include tablet {
+    max-width: 1120px;
+    margin   : 0 auto;
+  }
 }
