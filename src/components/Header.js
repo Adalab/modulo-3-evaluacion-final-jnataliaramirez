@@ -7,6 +7,7 @@ function Header(props) {
       <img 
       src={logo} 
       alt='logo Rick and Morty' className='header__logo' />
+      <h1>By Natalia Ramirez</h1>
     </header>
   );
 }

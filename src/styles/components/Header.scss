@@ -1,17 +1,30 @@
 @import '../core/mixins.scss';
+@import '../core/variables.scss';
+
 
 .header {
   display        : flex;
+  flex-direction: column;
   justify-content: center;
+  align-content: center;
   margin         : 20px;
 
 
   &__logo {
     width: 270px;
+    text-align: center;
+    margin: auto;
 
     @include tablet {
       width: 500px;
 
     }
+  }
+
+  h1 {
+    color: #C996CC;
+    text-align: center;
+    font-size: 15px;
+    font-family: $font-title;
   }
 }
