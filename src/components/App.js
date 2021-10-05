@@ -1,21 +1,21 @@
-// imports librerias
+// imports react
 import { useEffect, useState } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
-// imports componentes
+// imports components
 import Header from './Header';
 import FilterCharacter from './FilterCharacter';
 import FilterSpecie from './FilterSpecie';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
-import Footer from './Footer';
-// imports servicios
+// import Footer from './Footer';
+// imports services
 import callToApi from '../services/api.js';
-// imports estilos
+// imports styles
 import '../styles/App.scss';
 import '../styles/components/Form.scss';
 
 function App() {
-  // Variables de estado
+  // State variables
   const [searchCharacter, setSearchCharacter] = useState('');
   const [dataCharacters, setDataCharacters] = useState([]);
   const [filterSpecie, setFilterSpecie] = useState('');
@@ -27,7 +27,7 @@ function App() {
     });
   }, [searchCharacter]);
 
-  // Funciones manejadoras
+  // Handlers
   const handleSubmit = (ev) => {
     ev.preventDefault();
   };
@@ -42,13 +42,19 @@ function App() {
 
   // Router
   const routeCharacter = useRouteMatch('/character/:id');
-  const characterId = routeCharacter !== null ? routeCharacter.params.id : '';
 
-  const selectedCharacter = dataCharacters.find(
-    (data) => parseInt(data.id) === parseInt(characterId)
-  );
+  const getRouteCharacter = () => {
+    if (routeCharacter) {
+      const characterId = routeCharacter !== null ? routeCharacter.params.id : '';
+      const selectedCharacter = dataCharacters.find(
+        data  => {
+          return parseInt(data.id) === parseInt(characterId)
+        } 
+      );
+      return selectedCharacter || {};
+    }
+  }
 
-  // Funciones auxiliares
 
   return (
     <>
@@ -81,12 +87,12 @@ function App() {
 
           <Route path='/character/:id'>
             <section>
-              <CharacterDetail dataCharacter={selectedCharacter} />
+              <CharacterDetail dataCharacter={getRouteCharacter()} />
             </section>
           </Route>
 
           <Route>
-            <section>Oh! Página equivocada</section>
+            <section>Oh! Página equivocada 😅 </section>
           </Route>
         </Switch>
       </main>

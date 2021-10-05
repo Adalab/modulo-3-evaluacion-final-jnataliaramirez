@@ -4,7 +4,7 @@ import '../styles/components/CharacterList.scss';
 function CharacterList(props) {
   if (props.dataCharacters.length === 0) {
     return (
-      <h2 className='cards__item--title'>{`No hay ningún personaje que coincida con la palabra ${props.wordSearch}`}</h2>
+      <h2 className='cards__item--title'>{`No hay ningún personaje 🤷‍♀️ que coincida con la palabra ${props.wordSearch.toUpperCase()} 🙄 `}</h2>
     );
   }
 

@@ -26,12 +26,12 @@
     background-color: $color-principal-alt;
     border-radius   : 10px;
     margin          : 0 auto;
-    font-family: $font-title;
-    
-    
+    font-family     : $font-title;
+
+
     @include tablet {
-      width           : 210px;
-      height          : 210px;
+      width : 210px;
+      height: 210px;
 
     }
 
@@ -42,17 +42,17 @@
       width        : 120px;
 
       @include tablet {
-      width        : 140px;
+        width: 140px;
 
       }
     }
 
-    &--title  {
+    &--title {
       font-size    : 18px;
       margin-bottom: 5px;
       color        : $color-principal;
-      font-family: $font-title;
-      text-align: center;
+      font-family  : $font-title;
+      text-align   : center;
     }
 
     &--text {

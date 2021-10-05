@@ -26,25 +26,25 @@
   align-items    : center;
   flex-direction : column;
   margin         : 20px 0 30px;
-  text-align: center;
+  text-align     : center;
 
   div {
     display: flex;
   }
 
   &__character {
-    font-family  : $font-title;
-    width        : 230px;
-    border       : 0;
-    border-bottom: 2px solid $color-principal;
-    outline      : 0;
-    font-size    : 18px;
-    color        : $color-principal;
-    padding      : 1px 2px;
-    background   : transparent;
-    transition   : border-color 0.2s;
-    margin       : 5px 0 20px;
-    letter-spacing: 2px ;
+    font-family   : $font-title;
+    width         : 230px;
+    border        : 0;
+    border-bottom : 2px solid $color-principal;
+    outline       : 0;
+    font-size     : 18px;
+    color         : $color-principal;
+    padding       : 1px 2px;
+    background    : transparent;
+    transition    : border-color 0.2s;
+    margin        : 5px 0 20px;
+    letter-spacing: 2px;
 
   }
 
@@ -56,23 +56,23 @@
 
 
     select {
-      display      : inline-block;
-      width        : 65%;
-      cursor       : pointer;
-      padding      : 7px 10px;
-      height       : 35px;
-      outline      : 0;
-      border       : 0;
-      border-radius: 0;
-      background   : $color-secondary;
-      color        : $color-principal;
-      font-size    : 18px;
-      font-family  : $font-title;
-      border       : 1px solid $color-principal;
-      border-radius: 10px;
-      position     : relative;
-      transition   : all 0.25s ease;
-      letter-spacing: 2px ;
+      display       : inline-block;
+      width         : 65%;
+      cursor        : pointer;
+      padding       : 7px 10px;
+      height        : 35px;
+      outline       : 0;
+      border        : 0;
+      border-radius : 0;
+      background    : $color-secondary;
+      color         : $color-principal;
+      font-size     : 18px;
+      font-family   : $font-title;
+      border        : 1px solid $color-principal;
+      border-radius : 10px;
+      position      : relative;
+      transition    : all 0.25s ease;
+      letter-spacing: 2px;
     }
 
     select:hover {
