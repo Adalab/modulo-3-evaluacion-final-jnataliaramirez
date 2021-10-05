@@ -1,10 +1,13 @@
+import '../styles/components/FilterStatus.scss';
+
+
 function FilterStatus(props) {
   const handleStatus = ev => {
     props.handleChange(ev.target.value)
   };
 
   return (
-    <div>
+    <div className='filter'>
       
       <label htmlFor='Alive'>
         <i class='fas fa-heart icon'></i> Alive

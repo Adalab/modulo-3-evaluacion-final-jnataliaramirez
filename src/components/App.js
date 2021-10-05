@@ -80,8 +80,8 @@ function App() {
                   class='form__character'
                 />
               </div>
-              <FilterSpecie handleChange={handleSpecie} />
               <FilterStatus handleChange={handleStatus}/>
+              <FilterSpecie handleChange={handleSpecie} />
             </form>
             <section>
               <CharacterList
