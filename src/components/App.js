@@ -5,6 +5,7 @@ import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import Header from './Header';
 import FilterCharacter from './FilterCharacter';
 import FilterSpecie from './FilterSpecie';
+import FilterStatus from './FilterStatus';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
 // import Footer from './Footer';
@@ -19,6 +20,7 @@ function App() {
   const [searchCharacter, setSearchCharacter] = useState('');
   const [dataCharacters, setDataCharacters] = useState([]);
   const [filterSpecie, setFilterSpecie] = useState('');
+  const [status, setStatus] = useState('');
 
   // useEffect()
   useEffect(() => {
@@ -39,6 +41,10 @@ function App() {
   const handleSpecie = (value) => {
     setFilterSpecie(value);
   };
+
+  const handleStatus = (value) => {
+    setStatus(value);
+  }
 
   // Router
   const routeCharacter = useRouteMatch('/character/:id');
@@ -75,12 +81,14 @@ function App() {
                 />
               </div>
               <FilterSpecie handleChange={handleSpecie} />
+              <FilterStatus handleChange={handleStatus}/>
             </form>
             <section>
               <CharacterList
                 dataCharacters={dataCharacters}
                 wordSearch={searchCharacter}
                 species={filterSpecie}
+                status={status}
               />
             </section>
           </Route>

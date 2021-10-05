@@ -6,20 +6,20 @@ function CharacterDetail(props) {
     if (statusCharacter === 'Dead') {
       return (
         <p>
-          <span>Status:</span> <i class='fas fa-skull-crossbones icon'></i> Dead{' '}
+          <span>Status:</span> <i class='fas fa-skull-crossbones icon'></i> Dead
         </p>
       );
     } else if (statusCharacter === 'Alive') {
       return (
         <p>
-          <span>Status:</span> <i class='fas fa-heart icon'></i> Alive{' '}
+          <span>Status:</span> <i class='fas fa-heart icon'></i> Alive
         </p>
       );
     } else if (statusCharacter === 'unknown') {
       return (
         <p>
-          <span>Status:</span>{' '}
-          <i class='fa fa-question icon' aria-hidden='true'></i> Unknown{' '}
+          <span>Status:</span>
+          <i class='fa fa-question icon' aria-hidden='true'></i> Unknown
         </p>
       );
     }
