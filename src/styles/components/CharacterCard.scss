@@ -47,11 +47,12 @@
       }
     }
 
-    &--title {
+    &--title  {
       font-size    : 18px;
       margin-bottom: 5px;
       color        : $color-principal;
-
+      font-family: $font-title;
+      text-align: center;
     }
 
     &--text {

@@ -14,7 +14,7 @@ function CharacterDetail (props) {
   if (props.dataCharacter === undefined) {
     return (
       <section>
-        <p>Personaje no encontrado</p>
+        <p className='cards__item--title'>Personaje no encontrado</p>
       </section>
     );
   } else {

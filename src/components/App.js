@@ -54,23 +54,22 @@ function App() {
     <>
       <Header />
       <main>
-        <form className='form' onSubmit={handleSubmit}>
-          <div>
-            <FilterCharacter
-              type='text'
-              name='search'
-              id='search'
-              placeholder= 'Character search'
-              handleChange={handleSearch}
-              value={searchCharacter}
-              class='form__character'
-            />
-          </div>
-          <FilterSpecie handleChange={handleSpecie} />
-        </form>
-
         <Switch>
           <Route exact path='/'>
+            <form className='form' onSubmit={handleSubmit}>
+              <div>
+                <FilterCharacter
+                  type='text'
+                  name='search'
+                  id='search'
+                  placeholder='Character search'
+                  handleChange={handleSearch}
+                  value={searchCharacter}
+                  class='form__character'
+                />
+              </div>
+              <FilterSpecie handleChange={handleSpecie} />
+            </form>
             <section>
               <CharacterList
                 dataCharacters={dataCharacters}
