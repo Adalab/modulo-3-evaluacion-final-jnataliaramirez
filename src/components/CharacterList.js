@@ -23,20 +23,24 @@ function CharacterList(props) {
     })
     .filter((dataCharacter) => {
       if (props.status === 'Alive') {
-        return dataCharacter.status === 'Alive'
-      } if (props.status === 'Dead') {
-        return dataCharacter.status === 'Dead'
-      } if (props.status === 'unknown') {
-        return dataCharacter.status === 'unknown'
-      } return true;
+        return dataCharacter.status === 'Alive';
+      }
+      else if (props.status === 'Dead') {
+        return dataCharacter.status === 'Dead';
+      }
+      else if (props.status === 'unknown') {
+        return dataCharacter.status === 'unknown';
+      }
+      return true;
     })
-    .sort(function (a,b) {
+    .sort(function (a, b) {
       if (a.name > b.name) {
         return 1;
-      } 
+      }
       if (a.name < b.name) {
         return -1;
-      } return 0;
+      }
+      return 0;
     })
     .map((dataCharacter) => {
       return (

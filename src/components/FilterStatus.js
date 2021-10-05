@@ -31,7 +31,7 @@ function FilterStatus(props) {
         type='radio'
         id='Unknown'
         name='status'
-        value='Unknown'
+        value='unknown'
         onChange={handleStatus}
       />
     </div>
