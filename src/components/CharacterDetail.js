@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import '../styles/components/CharacterDetail.scss';
 
 function CharacterDetail(props) {
@@ -39,7 +38,7 @@ function CharacterDetail(props) {
   } else {
     return (
       <>
-      <div className='detail__return' onClick={handleClick}> <p> return </p> </div>
+      {/* <div className='detail__return' onClick={handleClick}> <p> return </p> </div> */}
       <article className='detail'>
         <img
           src={props.dataCharacter.image}
