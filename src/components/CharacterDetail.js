@@ -1,6 +1,11 @@
+import { Link } from 'react-router-dom';
 import '../styles/components/CharacterDetail.scss';
 
 function CharacterDetail(props) {
+
+  const handleClick = (ev) => {
+    props.handleReturn(ev)
+  }
 
   const renderDeadOrAlive = (statusCharacter) => {
     if (statusCharacter === 'Dead') {
@@ -33,6 +38,8 @@ function CharacterDetail(props) {
     );
   } else {
     return (
+      <>
+      <div className='detail__return' onClick={handleClick}> <p> return </p> </div>
       <article className='detail'>
         <img
           src={props.dataCharacter.image}
@@ -48,10 +55,11 @@ function CharacterDetail(props) {
           </p>
           {renderDeadOrAlive(props.dataCharacter.status)}
           <p>
-            <span>Episodes:</span> {props.dataCharacter.episodes}
+            <span># Episodes:</span> {props.dataCharacter.episodes}
           </p>
         </div>
       </article>
+      </>
     );
   }
 }
