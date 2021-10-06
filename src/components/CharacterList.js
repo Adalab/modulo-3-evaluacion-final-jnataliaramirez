@@ -33,6 +33,11 @@ function CharacterList(props) {
       }
       return true;
     })
+    .filter((dataCharacter) => {
+      if (props.episodies !== 0) {
+        return dataCharacter.episodes === props.episodies
+      } return true
+    })
     .sort(function (a, b) {
       if (a.name > b.name) {
         return 1;

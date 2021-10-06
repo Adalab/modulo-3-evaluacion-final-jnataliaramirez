@@ -6,6 +6,7 @@ import Header from './Header';
 import FilterCharacter from './FilterCharacter';
 import FilterSpecie from './FilterSpecie';
 import FilterStatus from './FilterStatus';
+import FilterEpisodies from './FilterEpisodies';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
 // import Footer from './Footer';
@@ -21,6 +22,7 @@ function App() {
   const [dataCharacters, setDataCharacters] = useState([]);
   const [filterSpecie, setFilterSpecie] = useState('');
   const [status, setStatus] = useState('');
+  const [episodies, setEpisodies] = useState(0)
 
   // useEffect()
   useEffect(() => {
@@ -44,6 +46,10 @@ function App() {
 
   const handleStatus = (value) => {
     setStatus(value);
+  }
+
+  const handleEpisodies = (value) => {
+    setEpisodies(parseInt(value));
   }
 
   // Router
@@ -82,6 +88,7 @@ function App() {
               </div>
               <FilterStatus handleChange={handleStatus}/>
               <FilterSpecie handleChange={handleSpecie} />
+              <FilterEpisodies handleChange={handleEpisodies} value={episodies} class='form__character'/>
             </form>
             <section>
               <CharacterList
@@ -89,6 +96,7 @@ function App() {
                 wordSearch={searchCharacter}
                 species={filterSpecie}
                 status={status}
+                episodies={episodies}
               />
             </section>
           </Route>

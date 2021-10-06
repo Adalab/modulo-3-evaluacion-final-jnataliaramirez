@@ -35,6 +35,7 @@ function CharacterCard(props) {
       />
       <h3 className='cards__item--title'>{props.dataCharacter.name}</h3>
       <p className='cards__item--text' >Specie: {props.dataCharacter.species}</p>
+      <p>Episodies: {props.dataCharacter.episodes} </p>
       {renderDeadOrAlive(props.dataCharacter.status)}
 
     </Link>
