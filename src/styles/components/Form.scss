@@ -45,11 +45,10 @@
     transition    : border-color 0.2s;
     margin        : 5px 0 20px;
     letter-spacing: 2px;
-
   }
 
   &__specie {
-    width          : 150px;
+    width          : 160px;
     position       : relative;
     display        : flex;
     justify-content: center;
@@ -60,7 +59,7 @@
       width         : 65%;
       cursor        : pointer;
       padding       : 7px 10px;
-      height        : 35px;
+      height        : 40px;
       outline       : 0;
       border        : 0;
       border-radius : 0;
@@ -73,6 +72,7 @@
       position      : relative;
       transition    : all 0.25s ease;
       letter-spacing: 2px;
+      margin: 16px;
     }
 
     select:hover {
@@ -98,6 +98,17 @@
       margin-top: 3px;
     }
 
+  }
+
+  &__episodies {
+    font-family   : $font-title;
+    width         : 230px;
+    border        : 0;
+    font-size     : 18px;
+    color         : $color-grey;
+    background    : transparent;
+    margin        : 25px 0 4px;
+    letter-spacing: 2px;
   }
 
 }

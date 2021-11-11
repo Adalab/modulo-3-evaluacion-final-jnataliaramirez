@@ -91,9 +91,9 @@ function App() {
                   class='form__character'
                 />
               </div>
-              <FilterStatus handleChange={handleStatus}/>
+              <FilterEpisodies handleChange={handleEpisodies} value={episodies} class='form__character' classEpisodies='form__episodies'/>
               <FilterSpecie handleChange={handleSpecie} />
-              <FilterEpisodies handleChange={handleEpisodies} value={episodies} class='form__character'/>
+              <FilterStatus handleChange={handleStatus}/>
             </form>
             <section>
               <CharacterList
