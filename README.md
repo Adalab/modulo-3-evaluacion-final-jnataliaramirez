@@ -18,7 +18,7 @@ Todo lo siguiente sera con React
 - Componentes y props
 - Lifting
 - Router
-- Ademas ... de aplicar todo lo visto en el módulo 1 - maquetación y módulo 2 - Javascript.
+- Ademas ... Maquetación web y JavaScript.
 
 ## Donde se puede ver 👀
 Esta página web tiene un enlace en la web, donde se podra visitar las veces que quiera.
