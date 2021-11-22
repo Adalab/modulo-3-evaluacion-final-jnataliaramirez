@@ -20,10 +20,10 @@ Todo lo siguiente sera con React
 - Router
 - Ademas ... de aplicar todo lo visto en el módulo 1 - maquetación y módulo 2 - Javascript.
 
-#### Donde se puede ver 👀
+## Donde se puede ver 👀
 Esta página web tiene un enlace en la web, donde se podra visitar las veces que quiera.
 
-**El enlace es el siguiente: [Rick and Morty](URL "https://jnataliaramirez.github.io/rick-and-morty/#/")**
+**El enlace es el siguiente: [Rick and Morty](https://jnataliaramirez.github.io/rick-and-morty/)**
 
 
 ## Como puedes abrir este repo para developers
