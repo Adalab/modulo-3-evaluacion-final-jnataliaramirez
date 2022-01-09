@@ -1,10 +1,8 @@
+import { Link } from 'react-router-dom'
 import '../styles/components/CharacterDetail.scss';
 
-function CharacterDetail(props) {
 
-  const handleClick = (ev) => {
-    props.handleReturn(ev)
-  }
+function CharacterDetail(props) {
 
   const renderDeadOrAlive = (statusCharacter) => {
     if (statusCharacter === 'Dead') {
@@ -37,8 +35,6 @@ function CharacterDetail(props) {
     );
   } else {
     return (
-      <>
-      {/* <div className='detail__return' onClick={handleClick}> <p> return </p> </div> */}
       <article className='detail'>
         <img
           src={props.dataCharacter.image}
@@ -57,8 +53,11 @@ function CharacterDetail(props) {
             <span># Episodes:</span> {props.dataCharacter.episodes}
           </p>
         </div>
-      </article>
-      </>
+        <Link to={`/`}>
+          <button>Return</button>
+        </Link>
+      </article>  
+
     );
   }
 }

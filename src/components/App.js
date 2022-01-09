@@ -23,7 +23,6 @@ function App() {
   const [filterSpecie, setFilterSpecie] = useState('');
   const [status, setStatus] = useState('');
   const [episodies, setEpisodies] = useState(0);
-  const [returnState, setReturnState] = useState('');
 
   // useEffect()
   useEffect(() => {
@@ -51,10 +50,6 @@ function App() {
 
   const handleEpisodies = (value) => {
     setEpisodies(parseInt(value));
-  }
-
-  const handleReturn = (value) => {
-    setReturnState(value)
   }
 
   // Router
@@ -102,7 +97,6 @@ function App() {
                 species={filterSpecie}
                 status={status}
                 episodies={episodies}
-                handleReturn={handleReturn}
               />
             </section>
           </Route>
